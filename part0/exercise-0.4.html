@@ -1,3 +1,22 @@
 //link-image:
 //https://mermaid.ink/img/pako:eNqlU8tu2zAQ_JUFz4lU262T6JBLGhToIS7gHgUUa3IlbSuRKh9KU8MfE_TQD_GPdVXVhtughyA6UOQsOTO7S26VdoZUoQJ9TWQ1vWWsPXalBfl69JE192gjbLy7D-SfBgQcRnyK3LlI4AQ4HChgBSmk_aNnB2wFIUgdgnXDOEQEAt2yln8HIW06jgeuPwzn19eTRgEfVuuP0MTYhyLPQ0yGKWQ6ZA21ge0XzirO6Rt2fUvY97ml-08iQRMd6sgDir2D4xGc5ueicfR742zFvsP9z_0PB4bAk6YNd2SjLCfT02FDTzhPquC5biK46rQSFgeq0TgPGBO2_B0BoeUgZRChkTn8P_t3t89J3mDE7HNw9nnZv1-v7o7mjAPtOjjp1ssT92QN-Snz37R_py87od8_1mxFS52pjqQVbOSKbkeJUsWGOipVIVNDFaY2lqq0O9mKKbr1g9WqiD7RmfIu1Y0qKmyDrFIvFTnc73_QW8PR-SPYOhSLqtiq-NCPr6MWiyKgx5tRj3jyrcCHZozhrObYpE0m9coDm0ZeSDNcLfPlfHmJ8wUtLxb4ZrEwejO7uqzmr2eVuXg1m6Pa7Xa_AD1CPT0?type=png
 
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note over browser: O usuário insere uma nova nota e clica em submit
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server-->>browser: Confirmação de recebimento da nota
+    deactivate server
+
+    Note right of browser: O navegador atualiza a lista de notas
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: JSON atualizado com a nova nota
+    deactivate server
+
+    Note right of browser: O navegador renderiza a nova lista de notas na página
