@@ -1,0 +1,17 @@
+//link-image
+//https://mermaid.ink/img/pako:eNp9Ustu2zAQ_BWC58Sq7dZJhCKXtpeiaAq4RwHBilxJi4qP8qEkNfwxQQ_9EP9Yl1XsBg1QHSTurDgzHO5OKqdR1jLi94xW4XuCPoBprODHQ0ikyINNog3uLmJ42WBwKvjc-ewSCsfAcUMtbkSO-fAYyAmyjKDIBoR1U3klECjUSIq_RsTcGkpHrieG8-vrWaMWX262X8WQko91VcWUNWFcqLgYcIxkv9GiowrvwfgRwfvK4t0tS-Bt9DBTgko0AVs8ui7gvD5nnZPnd852FAwcfh1-OqFRBFTYkkGbuJyNz5s1vuB8lkSgfkjCdX_T-AgTbFUgnwTeU4vieRSaAiYoKigsCH947MnC2zZUHIEpJiAE7OF_cX-iWJjwD2MUkDKM9AN0CbooUrF_4i6pJzTeMTmMjZVn0iAfnDQPxa6INDINaLCRNS81dpDH1MjG7vlXyMltH6ySdQoZz2RwuR9k3cEYucpecyxPE_UP-kFTcuEEjg40crmT6cGXeez5FCygyj30Bc9hZPh496W96CkNuV0oZ6pIeuCZHKarTbVZbS5htcbNxRrerNdatcury271etnpi1fLFcj9fv8beUQM8Q?type=png
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note over browser: O usuário insere uma nova nota e clica em submit
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: Confirmação de recebimento da nota
+    deactivate server
+
+    Note right of browser: JavaScript exibe a nova nota diretamente na página<br/>sem recarregar
+
+    Note over browser: Lista de notas atualizada e exibida na página em tempo real
